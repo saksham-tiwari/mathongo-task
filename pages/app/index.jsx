@@ -1,4 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/auth";
+import { destroyCookie } from 'nookies';
+import { useRouter } from "next/router";
+
 export default function IndexPage() {
     const [show, setShow] = useState(false);
     const [profile, setProfile] = useState(false);
@@ -6,7 +11,15 @@ export default function IndexPage() {
     const [menu1, setMenu1] = useState(false);
     const [menu2, setMenu2] = useState(false);
     const [menu3, setMenu3] = useState(false);
-
+    const dispatch = useDispatch()
+    const router = useRouter()
+    const signout = ()=>{
+        console.log("logout click");
+        dispatch(logout())
+        destroyCookie(null, 'user');
+        destroyCookie(null, 'token');
+        router.push("/")
+    }
     return (
         <>
             <div className="w-full h-full bg-gray-200">
@@ -243,7 +256,7 @@ export default function IndexPage() {
                                                                     <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
                                                                     <path d="M7 12h14l-3 -3m0 6l3 -3" />
                                                                 </svg>
-                                                                <span className="text-sm ml-2">Sign out</span>
+                                                                <span className="text-sm ml-2" onClick={signout}>Sign out</span>
                                                             </div>
                                                         </li>
                                                     </ul>
