@@ -1,6 +1,6 @@
 import React from 'react'
-import Panel from '../../components/Panel'
-import WorkoutLists from '../../components/WorkoutLists'
+import Panel from '../../../components/Panel'
+import WorkoutLists from '../../../components/WorkoutLists'
 
 const index = () => {
   return (
