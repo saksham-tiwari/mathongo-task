@@ -2,6 +2,8 @@ import { useRouter } from 'next/router';
 import PushPinIcon from '@mui/icons-material/PushPin';
 import { useDispatch } from 'react-redux';
 import { addPin, removePin } from '../redux/pinned';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { removeWorkout } from '../redux/workouts';
 
 const ListElement = (props) => {
     const router = useRouter()
@@ -17,6 +19,9 @@ const ListElement = (props) => {
     const changePinned = ()=>{
         if(props.pinned.includes(props.data.id)) dispatch(removePin(props.data.id)) 
         else dispatch(addPin(props.data.id))
+    }
+    const delWork = ()=>{
+        dispatch(removeWorkout(props.data.id))
     }
   return (
     <tr className="text-sm leading-none text-gray-600 h-16">
@@ -40,6 +45,7 @@ const ListElement = (props) => {
         </td>
         <td>
             <button type='button' onClick={changePinned} className={`pl-16 ${!props.pinned.includes(props.data.id)?"text-blue-200":"text-black"}`}><PushPinIcon className='rotate-45'/></button>
+            <button type='button' onClick={delWork} className={`pl-4 text-red-600`}><DeleteIcon/></button>
         </td>
     </tr>
   )

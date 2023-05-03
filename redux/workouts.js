@@ -34,15 +34,17 @@ const workoutsSlice = createSlice({
   ],
   reducers: {
     addWorkout: (state,action)=>{
-      console.log(action.payload)
       return [
         ...state,
         action.payload
       ]
     },
+    removeWorkout: (state,action)=>{
+      return state.filter(s=>s.id!==action.payload)
+    },
   },
 });
 
-export const { addWorkout } = workoutsSlice.actions;
+export const { addWorkout, removeWorkout } = workoutsSlice.actions;
 
 export default workoutsSlice.reducer;
