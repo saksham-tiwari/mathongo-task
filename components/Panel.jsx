@@ -18,7 +18,7 @@ export default function Panel(props) {
     }
     return (
         <>
-            <div className="w-full h-full bg-gray-200">
+            <div className="w-[100vw] h-[100vh] bg-gray-200">
                 <div className="flex flex-no-wrap">
                     {/* Sidebar starts */}
                     <div className="absolute lg:relative w-64 h-screen shadow bg-gray-100 hidden lg:block">
