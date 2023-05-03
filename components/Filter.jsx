@@ -40,10 +40,6 @@ const Filter1 = (props) => {
             advanced: false,
             expert: false
         });
-        // {
-        //     type:[1,2,3,4],
-        //     difficulty:[3,4,52,1]
-        // }
         let x = {}
         x["type"] = []
         x["difficulty"] = []
@@ -57,17 +53,13 @@ const Filter1 = (props) => {
         if(expert) x["difficulty"].push("expert")
         console.log(x)
         props.setFilter(x)
-        // x["type"] = [bodyweight?""]
         setShowfilters(false)
     };
 
     return (
         <div>
             <div >
-                {/* <p className=" text-sm leading-3 text-gray-600 font-normal mb-2">Home - Men - Products - Filters</p> */}
                 <div className=" flex justify-between items-center mb-4">
-                    {/* <h2 className=" lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 font-semibold">Watches</h2> */}
-
                     {/*  filters Button (md and plus Screen) */}
                     <button onClick={() => setShowfilters(!showFilters)} className=" cursor-pointer sm:flex hidden hover:bg-gray-700 focus:ring focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-4 px-6 bg-gray-800 flex text-base leading-4 font-normal text-white justify-center items-center ">
                         <svg className=" mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,10 +76,6 @@ const Filter1 = (props) => {
                         Filters
                     </button>
                 </div>
-                {/* <p className=" text-xl leading-5 text-gray-600 font-medium">09 Products</p> */}
-
-                {/* Filters Button (Small Screen)  */}
-
                 <button onClick={() => setShowfilters(!showFilters)} className="cursor-pointer mt-6 block sm:hidden hover:bg-gray-700 focus:ring focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-2 w-full bg-gray-800 flex text-base leading-4 font-normal text-white justify-center items-center">
                     <svg className=" mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6 12C7.10457 12 8 11.1046 8 10C8 8.89543 7.10457 8 6 8C4.89543 8 4 8.89543 4 10C4 11.1046 4.89543 12 6 12Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -103,7 +91,6 @@ const Filter1 = (props) => {
                     Filters
                 </button>
             </div>
-
             <div id="filterSection" className={"relative md:py-10 lg:px-20 md:px-6 py-9 px-4 bg-gray-50 w-full " + (showFilters ? "block" : "hidden")}>
                 {/* Cross button Code  */}
                 <div onClick={() => setShowfilters(false)} className=" cursor-pointer absolute right-0 top-0 md:py-10 lg:px-20 md:px-6 py-9 px-4">
@@ -112,7 +99,6 @@ const Filter1 = (props) => {
                         <path d="M1 1L25 25" stroke="#27272A" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </div>
-
                 {/* Type Section */}
                 <div>
                     <div className=" flex space-x-2">

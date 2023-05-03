@@ -1,10 +1,7 @@
-import React, { use, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Panel from '../../../components/Panel'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
 import Filter from '../../../components/Filter';
 import Sort from '../../../components/Sort';
 
@@ -13,12 +10,10 @@ const WorkoutPage = () => {
   const router = useRouter()
   const workouts = useSelector(state=>state.workouts)
   const [data,setData] = useState()
-  const [wId,setWId] = useState("")
   const [filter,setFilter] = useState({type:[],difficulty:[]})
   const [sort,setSort] = useState(1)
   const [exercises,setExercises] = useState()
   useEffect(()=>{
-    setWId(router.query.id);
     console.log(workouts);
     if(router.query.id){
       if(!workouts.find(w=>w.id===router.query.id)) router.push("/404")
@@ -71,9 +66,7 @@ const WorkoutPage = () => {
         if(filter.difficulty.length)y=y.filter(ex=>filter.difficulty.includes(ex.difficulty))
         setExercises(y)
       }
-      
     }
-
   },[data,sort,filter])
   return (
     <Panel>
@@ -96,9 +89,6 @@ const WorkoutPage = () => {
                 <li>Duration:{ex.duration}</li>
               </ul>
             </div>)}
-            {/* <div className="w-full sm:w-1/3 h-64 rounded-t sm:rounded-l sm:rounded-t-none shadow bg-white dark:bg-gray-800" />
-            <div className="w-full sm:w-1/3 h-64 shadow bg-white dark:bg-gray-800" />
-            <div className="w-full sm:w-1/3 h-64 rounded-b sm:rounded-b-none shadow bg-white dark:bg-gray-800" /> */}
         </div>
       </div>}
     </Panel>

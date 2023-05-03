@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import DeleteIcon from '@mui/icons-material/Delete';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
@@ -14,9 +14,6 @@ const Form = () => {
     const [rName,setRName] = useState("")
     const [desc,setDesc] = useState("")
     const [activeEx,setActiveEx] = useState(['ex2']);
-    useEffect(()=>{
-        console.log(activeEx);
-    },[activeEx])
     const addExs = ()=>{
         let y = [...activeEx]
         y.push("ex"+Array.from({length: 11}, (_, i) => i + 1).find(n=>{
@@ -106,7 +103,6 @@ const Form = () => {
                         y[i] = e.target.value
                         setActiveEx(y)
                     }} value={exer} id="exerciseName" className="text-gray-600 dark:text-gray-400 focus:outline-none focus:border focus:border-indigo-700 dark:focus:border-indigo-700 dark:border-gray-700 dark:bg-gray-800 bg-white font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border shadow" placeholder="Name" >
-                        {/* <option selected className='disabled:line-through disabled:bg-slate-300'>Choose an exercise</option> */}
                         {exercisesState.map((ex,ind)=><option disabled={activeEx.includes(ex.id)} key={ind} value={ex.id} className='disabled:line-through disabled:bg-slate-300'>{ex.name}</option>)}
                     </select>
                     </div>
