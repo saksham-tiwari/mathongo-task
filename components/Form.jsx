@@ -56,8 +56,11 @@ const Form = () => {
     }
     const submit = (e)=>{
         e.preventDefault();
+        const maxObj = workouts.reduce((accumulator, current) => {
+            return accumulator.id > current.id ? accumulator : current;
+          });
         let x = {}
-        x['id'] = "w"+String(parseInt(workouts.slice(-1)[0].id[1])+1)
+        x['id'] = 'w'+(parseInt(maxObj.id.slice(1))+1)
         x['name'] = rName
         x['description'] = desc
         x['userId'] = "643f9f04dcba0b276b55ce6f"
