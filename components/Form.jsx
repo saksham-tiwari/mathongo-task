@@ -80,7 +80,7 @@ const Form = () => {
                     <label htmlFor="routineName" className="text-gray-800 dark:text-gray-100 text-sm font-bold leading-tight tracking-normal mb-2 w-full ">
                         Routine Name
                     </label>
-                    <input id="routineName" className="text-gray-600 dark:text-gray-400 focus:outline-none focus:border focus:border-indigo-700 dark:focus:border-indigo-700 dark:border-gray-700 dark:bg-gray-800 bg-white font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border shadow" value={rName} onChange={(e)=>setRName(e.target.value)} placeholder="Name" />
+                    <input id="routineName" className="text-gray-600 dark:text-gray-400 focus:outline-none focus:border focus:border-indigo-700 dark:focus:border-indigo-700 dark:border-gray-700 dark:bg-gray-800 bg-white font-normal h-10 flex items-center pl-3 text-sm border-gray-300 rounded border shadow sm:w-64 w-[200px]" value={rName} onChange={(e)=>setRName(e.target.value)} placeholder="Name" />
                 </div>
                 <div className="flex flex-col md:mr-16 w-[65%] ">
                 <label htmlFor="description" className="text-gray-800 dark:text-gray-100 text-sm font-bold leading-tight tracking-normal mb-2 w-full">
@@ -102,7 +102,7 @@ const Form = () => {
                         let y = [...activeEx]
                         y[i] = e.target.value
                         setActiveEx(y)
-                    }} value={exer} id="exerciseName" className="text-gray-600 dark:text-gray-400 focus:outline-none focus:border focus:border-indigo-700 dark:focus:border-indigo-700 dark:border-gray-700 dark:bg-gray-800 bg-white font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border shadow" placeholder="Name" >
+                    }} value={exer} id="exerciseName" className="text-gray-600 dark:text-gray-400 focus:outline-none focus:border focus:border-indigo-700 dark:focus:border-indigo-700 dark:border-gray-700 dark:bg-gray-800 bg-white font-normal sm:w-64 w-[150px] h-10 flex items-center pl-3 text-sm border-gray-300 rounded border shadow" placeholder="Name" >
                         {exercisesState.map((ex,ind)=><option disabled={activeEx.includes(ex.id)} key={ind} value={ex.id} className='disabled:line-through disabled:bg-slate-300'>{ex.name}</option>)}
                     </select>
                     </div>
