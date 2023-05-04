@@ -5,13 +5,14 @@ import { useDispatch } from 'react-redux';
 import { login } from '../../redux/auth';
 
 export default function IndexPage() {
-    const router = useRouter();
-    const dispatch = useDispatch();
+    const router = useRouter(); // initialize Next.js router
+    const dispatch = useDispatch(); // initialize Redux dispatch function
     const loginFunc =()=>{
+        // set cookies with user information and a token
         Cookies.set("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2Y5ZjA0ZGNiYTBiMjc2YjU1Y2U2ZiJ9.-wfLXdhzvAnf7pWd0fkD3PKMQ4IT2axoMhgTo1bPgJA")
         Cookies.set("user","643f9f04dcba0b276b55ce6f")
-        dispatch(login());
-        router.push("/app")
+        dispatch(login()); // call Redux login function
+        router.push("/app") // redirect to app page
     }
     return (
         <div className="min-h-screen bg-gray-200">
@@ -34,6 +35,7 @@ export default function IndexPage() {
                         />
                         <span>Login with Google</span>
                     </button>
+                    {/* Close button */}
                     <div className="cursor-pointer absolute top-0 right-0 m-3 dark:text-gray-100 text-gray-400 text-gray-600 transition duration-150 ease-in-out" onClick={()=>router.push("/")}>
                         <svg xmlns="http://www.w3.org/2000/svg" aria-label="Close" className="icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" />
