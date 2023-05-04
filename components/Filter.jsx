@@ -61,7 +61,7 @@ const Filter1 = (props) => {
             <div >
                 <div className=" flex justify-between items-center mb-4">
                     {/*  filters Button (md and plus Screen) */}
-                    <button onClick={() => setShowfilters(!showFilters)} className=" cursor-pointer sm:flex hidden hover:bg-gray-700 focus:ring focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-4 px-6 bg-gray-800 flex text-base leading-4 font-normal text-white justify-center items-center ">
+                    <button onClick={() => setShowfilters(!showFilters)} className=" cursor-pointer hover:bg-gray-700 focus:ring focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-4 px-6 bg-gray-800 flex text-base leading-4 font-normal text-white justify-center items-center ">
                         <svg className=" mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 12C7.10457 12 8 11.1046 8 10C8 8.89543 7.10457 8 6 8C4.89543 8 4 8.89543 4 10C4 11.1046 4.89543 12 6 12Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M6 4V8" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -76,7 +76,7 @@ const Filter1 = (props) => {
                         Filters
                     </button>
                 </div>
-                <button onClick={() => setShowfilters(!showFilters)} className="cursor-pointer mt-6 block sm:hidden hover:bg-gray-700 focus:ring focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-2 w-full bg-gray-800 flex text-base leading-4 font-normal text-white justify-center items-center">
+                {/* <button onClick={() => setShowfilters(!showFilters)} className="cursor-pointer mt-6 block sm:hidden hover:bg-gray-700 focus:ring focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-2 w-full bg-gray-800 flex text-base leading-4 font-normal text-white justify-center items-center">
                     <svg className=" mr-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6 12C7.10457 12 8 11.1046 8 10C8 8.89543 7.10457 8 6 8C4.89543 8 4 8.89543 4 10C4 11.1046 4.89543 12 6 12Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M6 4V8" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -89,7 +89,7 @@ const Filter1 = (props) => {
                         <path d="M18 9V20" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     Filters
-                </button>
+                </button> */}
             </div>
             <div id="filterSection" className={"relative md:py-10 lg:px-20 md:px-6 py-9 px-4 bg-gray-50 w-full " + (showFilters ? "block" : "hidden")}>
                 {/* Cross button Code  */}
@@ -108,7 +108,7 @@ const Filter1 = (props) => {
                         </svg>
                         <p className=" lg:text-2xl text-xl lg:leading-6 leading-5 font-medium text-gray-800 ">Type</p>
                     </div>
-                    <div className=" md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
+                    <div className=" md:flex md:space-x-6 mt-8 grid grid-cols-2 gap-y-8 flex-wrap">
                         <div className=" flex space-x-2 md:justify-center md:items-center items-center justify-start">
                             <input className="w-4 h-4 mr-2" type="checkbox" id="Bodyweight" name="bodyweight" value="bodyweight" checked={bodyweight} onChange={changeHandler} />
                             <div className=" inline-block">
@@ -129,7 +129,7 @@ const Filter1 = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className=" flex space-x-2 md:justify-center md:items-center items-center justify-end">
+                        <div className="flex space-x-2 justify-start">
                             <input className="w-4 h-4 mr-2" type="checkbox" id="Barbell" name="barbell" value="barbell" checked={barbell} onChange={changeHandler} />
                             <div className=" inline-block">
                                 <div className=" flex space-x-6 justify-center items-center">
@@ -139,7 +139,7 @@ const Filter1 = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className=" flex space-x-2 md:justify-center md:items-center items-center justify-start">
+                        <div className="flex space-x-2 justify-start">
                             <input className="w-4 h-4 mr-2" type="checkbox" id="Machine" name="machine" value="machine" checked={machine} onChange={changeHandler} />
                             <div className=" inline-block">
                                 <div className=" flex space-x-6 justify-center items-center">
@@ -168,7 +168,7 @@ const Filter1 = (props) => {
                         </svg>
                         <p className="  lg:text-2xl text-xl lg:leading-6 leading-5 font-medium text-gray-800 ">Difficulty</p>
                     </div>
-                    <div className=" md:flex md:space-x-6 mt-8 grid grid-cols-3 gap-y-8 flex-wrap">
+                    <div className=" md:flex md:space-x-6 mt-8 grid grid-cols-2 gap-y-8 flex-wrap">
                         <div className=" flex md:justify-center md:items-center items-center justify-start ">
                             <input className="w-4 h-4 mr-2" type="checkbox" id="Beginner" name="beginner" value="beginner" checked={beginner} onChange={changeHandler} />
                             <div className=" inline-block">
@@ -189,7 +189,7 @@ const Filter1 = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className=" flex md:justify-center md:items-center items-center justify-end ">
+                        <div className=" flex space-x-2 justify-start">
                             <input className="w-4 h-4 mr-2" type="checkbox" id="Advanced" name="advanced" value="advanced" checked={advanced} onChange={changeHandler} />
                             <div className=" inline-block">
                                 <div className=" flex space-x-6 justify-center items-center">
@@ -199,7 +199,7 @@ const Filter1 = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className=" flex md:justify-center md:items-center items-center justify-start ">
+                        <div className=" flex space-x-2 justify-start ">
                             <input className="w-4 h-4 mr-2" type="checkbox" id="Expert" name="expert" value="expert" checked={expert} onChange={changeHandler} />
                             <div className=" inline-block">
                                 <div className=" flex space-x-6 justify-center items-center">
