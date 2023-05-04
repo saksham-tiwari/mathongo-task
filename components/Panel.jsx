@@ -10,7 +10,6 @@ export default function Panel(props) {
     const dispatch = useDispatch()
     const router = useRouter()
     const signout = ()=>{
-        console.log("logout click");
         dispatch(logout())
         destroyCookie(null, 'user');
         destroyCookie(null, 'token');

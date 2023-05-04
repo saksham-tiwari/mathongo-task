@@ -52,7 +52,6 @@ const Filter1 = (props) => {
         if(intermediate) x["difficulty"].push("intermediate")
         if(advanced) x["difficulty"].push("advanced")
         if(expert) x["difficulty"].push("expert")
-        console.log(x)
         props.setFilter(x)
         setShowfilters(false)
     };

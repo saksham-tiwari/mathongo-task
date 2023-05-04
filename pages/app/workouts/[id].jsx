@@ -16,7 +16,6 @@ const WorkoutPage = () => {
   const [exercises,setExercises] = useState() // state variable to store the exercises of the workout
   const [copy,setCopy] = useState(false) // state variable to track whether the link has been copied or not
   useEffect(()=>{
-    console.log(workouts); // log the workouts state
     if(router.query.id){ // check if workout id is available in the URL query
       // if((!workouts.find(w=>w.id===router.query.id))&&(router.query.id.length<4)) router.push("/404")
       // else {

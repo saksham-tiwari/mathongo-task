@@ -77,7 +77,6 @@ const Form = () => {
         x['description'] = desc
         x['userId'] = "643f9f04dcba0b276b55ce6f"
         x['exercises'] = getExercises()
-        console.log(x);
         dispatch(addWorkout(x))
         router.push("/app/workouts")
     }
